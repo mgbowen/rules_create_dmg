@@ -89,7 +89,7 @@ macos_dmg = rule(
         "out": attr.output(),
         "license_file": attr.label(allow_single_file = True),
         "_create_dmg_tool": attr.label(
-            default = Label("//:create_dmg_tool"),
+            default = Label("//lib/private:create_dmg_tool"),
             executable = True,
             cfg = "exec",
         ),

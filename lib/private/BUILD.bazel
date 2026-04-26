@@ -1,0 +1,6 @@
+load("@npm//:create-dmg/package_json.bzl", create_dmg_bin = "bin")
+
+create_dmg_bin.create_dmg_binary(
+    name = "create_dmg_tool",
+    visibility = ["//lib:__subpackages__"],
+)
