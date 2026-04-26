@@ -1,0 +1,27 @@
+{
+	"dependencies": {
+		"create-dmg": "^8.1.0"
+	},
+	"devDependencies": {
+		"node-gyp": "^11.2.0"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"create-dmg",
+			"macos-alias",
+			"fs-xattr"
+		],
+		"packageExtensions": {
+			"macos-alias": {
+				"dependencies": {
+					"node-gyp": "*"
+				}
+			},
+			"fs-xattr": {
+				"dependencies": {
+					"node-gyp": "*"
+				}
+			}
+		}
+	}
+}
