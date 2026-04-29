@@ -1,4 +1,4 @@
-# rules_create_dmg
+# bazel-create-dmg
 
 Bazel rules for creating macOS DMG files using
 [create-dmg](https://github.com/sindresorhus/create-dmg) by
@@ -12,12 +12,12 @@ a macOS application bundle into a disk image.
 Add the following to your `MODULE.bazel`:
 
 ```starlark
-bazel_dep(name = "rules_create_dmg", version = "1.0.0")
+bazel_dep(name = "mgbowen_create_dmg", version = "1.0.0")
 git_override(
-    module_name = "rules_create_dmg",
+    module_name = "mgbowen_create_dmg",
     # You may wish to pin this to a specific commit using `commit = "..."`.
     branch = "main",
-    remote = "https://github.com/mgbowen/rules_create_dmg.git",
+    remote = "https://github.com/mgbowen/bazel-create-dmg.git",
 )
 ```
 
@@ -27,7 +27,7 @@ Load the rule and apply it to a `macos_application` target:
 
 ```starlark
 load("@rules_apple//apple:macos.bzl", "macos_application")
-load("@rules_create_dmg//lib:defs.bzl", "macos_dmg")
+load("@mgbowen_create_dmg//lib:defs.bzl", "macos_dmg")
 
 macos_application(
     name = "MyApp",

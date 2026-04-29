@@ -1,5 +1,5 @@
 module(
-    name = "rules_create_dmg",
+    name = "mgbowen_create_dmg",
     version = "1.0.0",
 )
 
